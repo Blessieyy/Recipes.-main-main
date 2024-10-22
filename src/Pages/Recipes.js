@@ -11,10 +11,23 @@ export default function Recipes() {
             authorImg: "/img/top-chiefs/img_1.jpg",
             description: "Delicious pizza with chicken and toppings."
         },
+        {
+            title: "Spaghetti and Meatballs",
+            image: "/img/gallery/img_4.jpg",
+            authorImg: "/img/top-chiefs/img_2.jpg",
+            description: "Classic spaghetti with homemade meatballs."
+        },
+        {
+            title: "American Cheese Burger",
+            image: "/img/gallery/img_5.jpg",
+            authorImg: "/img/top-chiefs/img_3.jpg",
+            description: "Juicy burger with cheese and toppings."
+        },
         // ... other default recipes
     ];
 
     const [recipes, setRecipes] = useState([]);
+    const [searchTerm, setSearchTerm] = useState(""); // State for the search term
     const [isEditing, setIsEditing] = useState(null); // Track which recipe is being edited
     const [editFormData, setEditFormData] = useState({ title: "", image: "", authorImg: "", description: "" });
 
@@ -58,11 +71,23 @@ export default function Recipes() {
         }
     };
 
+    // Filtered recipes based on the search term
+    const filteredRecipes = recipes.filter(recipe =>
+        recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
         <div>
             <PreviousSearches />
+            <input
+                type="text"
+                placeholder="Search recipes..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                style={{ margin: "20px", padding: "10px", width: "300px" }}
+            />
             <div className="recipes-container">
-                {recipes.map((recipe, index) => (
+                {filteredRecipes.map((recipe, index) => (
                     <div key={index} className="recipe-card-wrapper">
                         <RecipeCard recipe={recipe} />
                         <button onClick={() => handleEdit(index)}>Edit</button>
