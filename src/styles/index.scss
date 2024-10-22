@@ -1,0 +1,265 @@
+:root{
+    --background-color: #fff;
+    --background-light: #fff;
+    --shadow-color: rgba(0,0,0,0.2);
+    --primary-color: rgb(255, 0, 86);
+    --text-color: #0A0A0A;
+    --text-light: #575757;
+    --font-size: 16px;
+    --animation-speed: 1;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    padding-top: 55px;
+}
+a{
+  text-decoration: none;  
+}
+img{
+    object-fit: cover;
+}
+
+.btn{
+    border: none;
+    outline: none;
+    background-color: rgb(255, 0, 106);
+    color: #fff;
+    padding: .75em 1em;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px black;
+
+    
+    &:hover{
+        box-shadow: 0 1px 3px black;
+        transition: calc(0.5s)
+    }
+
+}
+.custom-image{
+    background-color:rgb(255, 0, 106);
+    height: 0;
+    width: 100%;
+    position: relative;
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+}
+
+@import "Partials/navbar.scss";
+.section{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 3vw;
+    .col{
+        width: 50%;
+    }
+    &.d-block{
+        display: block;
+    }
+
+}
+.title{
+    color: black;
+    font-size: 2.5em;
+    margin-top: .25em;
+    font-weight: 900;
+}
+.info{
+    color: black;
+    font-size: 1em;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    margin-bottom: 1.25em;
+}
+.col{
+    width: 50%;
+}
+@import "Partials/hero-section.scss";
+@import "Partials/imporve.scss";
+@import "Partials/quote-section";
+@import "Partials/previous-searches.scss";
+@import "Partials/recipes-section.scss";
+
+.options-container{
+    box-shadow: 0 5px 10px gray;
+    padding: 1em;
+    border-radius: 5px;
+    border-left: .5em solid  rgb(255, 0, 106);
+    background-color: whitesmoke;
+    margin-top: 1em;
+    display: flex;
+    gap: 1em;
+    .option{
+        height: 3.5em;
+        width: 3.5em;
+        box-shadow: 0 3px 6px gray;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.light{
+            background-color: #fff;
+        }
+        &.dark{
+            background-color: rgb(29, 29, 29);
+        }
+        .check{
+            height: 2.5em;
+            width: 2.5em;
+            background-color: rgb(255, 0, 106);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgb(255, 0, 106);;
+            svg{
+                height: 1.5em;
+                line-height: 2.5em;
+            }
+            
+        }
+       
+    }
+    .btn span{
+        display: inline-block;
+        margin-right: .5em;
+    }
+
+}
+.d-block h2{
+    font-size: 2em;
+}
+.details{
+  margin-left: 30%;
+  margin-bottom: 3em;
+  
+  .logo{
+    
+        font-size: 1.2em;
+        font-weight: bolder;
+        color: rgb(255, 0, 106);
+        span{
+            color: rgb(0, 0, 0);
+        
+  }
+}
+
+}
+.det-titl{
+    justify-content: center;
+}
+.slogan{
+    margin-bottom: 4em;
+}
+
+input{
+    box-shadow: 0 5px 10px gray;
+    padding: .75em;
+    padding-right: 10em;
+    border-radius: 5px;
+    border-left: .5em solid  rgb(255, 0, 106);
+    background-color: rgb(255, 255, 255);
+    margin-top: 1em;
+    margin: .75em;
+    display: flex;   
+}
+
+@import "Partials/footer.scss";
+
+
+
+
+
+.main{
+    padding-block: 3vw;
+}
+.container{
+    padding-inline: 15vw;
+
+}
+
+@import "Partials/animations.scss";
+@media screen and (max-width: 1280px) {
+    .container{
+        padding-inline: 18vw;
+    }
+
+}
+@media screen and (max-width: 1050px) {
+    .container{
+        padding-inline: 12vw;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .navbar{
+        .nav-links{
+            display: none;
+        }
+        .sidebar-btn{
+            display: block;
+
+        }
+        
+    }
+    .section{
+        .col{
+            width: 100%;
+            padding: 0 !important;
+            text-align: center;
+            margin-bottom: 2em;
+        }
+    }
+    .skill-item{
+        display: inline-block;
+        margin: .75em;
+        
+    }
+    .section.improve-skills .btn{
+        display: block;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    .container{
+        padding-inline: 6vw;
+    }
+    .footer{
+        grid-template-columns: repeat(4, 1fr);
+        .footer-section:nth-child(1){
+            grid-column: span 4;
+        }
+        .footer-section:nth-child(2), .footer-section:nth-child(3){
+            grid-column: span 4;
+        }
+    }
+    @media screen and (max-width: 400px) {
+        .container{
+            padding-inline: 3vw;
+        }
+    
+    }
+}
+
+
+
+
