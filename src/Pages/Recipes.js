@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import PreviousSearches from "../components/PreviousSearches";
 import RecipeCard from "../components/RecipeCard";
 import { useState, useEffect } from "react";
 
@@ -78,7 +77,7 @@ export default function Recipes() {
 
     return (
         <div>
-            <PreviousSearches />
+
             <input
                 type="text"
                 placeholder="Search recipes..."
