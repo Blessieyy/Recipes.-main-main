@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "id": "84f8",
+      "fname": "Gabriel",
+      "lname": "Sampson",
+      "email": "gabesamp@gmail.com",
+      "password": "123456",
+      "cpassword": "123456"
+    }
+  ]
+}
